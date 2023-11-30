@@ -93,7 +93,7 @@ public class StaffRegis extends AppCompatActivity {
 
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
 
-        db.collection("users")
+        db.collection("staff")
                 .document(firebaseUser.getUid()) // Menggunakan UID dari pengguna sebagai ID dokumen
                 .set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

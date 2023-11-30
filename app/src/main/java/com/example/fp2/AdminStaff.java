@@ -1,6 +1,5 @@
 package com.example.fp2;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,7 +40,7 @@ public class AdminStaff extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Ketika tombol "Add" ditekan, arahkan ke activity AddStaffActivity
-                Intent intent = new Intent(AdminStaff.this, MainActivity.class);
+                Intent intent = new Intent(AdminStaff.this, HomeAdmin.class);
                 startActivity(intent);
             }
         });
@@ -59,7 +58,7 @@ public class AdminStaff extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         // Ambil data dari Firestore
-        db.collection("users")
+        db.collection("staff")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

@@ -7,14 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeAdmin extends AppCompatActivity {
 
     Button buttonStaff, buttonProduk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home_admin);
 
         buttonStaff = findViewById(R.id.buttonStaff);
         buttonProduk = findViewById(R.id.buttonProduk);
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         buttonStaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AdminStaff.class);
+                Intent intent = new Intent(HomeAdmin.this, AdminStaff.class);
                 startActivity(intent);
             }
         });

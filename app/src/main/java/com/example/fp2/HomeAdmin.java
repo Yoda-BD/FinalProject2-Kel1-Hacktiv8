@@ -26,8 +26,5 @@ public class HomeAdmin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        // Tambahkan fungsi onClickListener untuk buttonProduk jika diperlukan
-        // buttonProduk.setOnClickListener(new View.OnClickListener() { ... });
     }
 }

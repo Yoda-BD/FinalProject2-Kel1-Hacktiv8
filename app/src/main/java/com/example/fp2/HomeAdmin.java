@@ -26,5 +26,14 @@ public class HomeAdmin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        buttonProduk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent crud = new Intent(getApplicationContext(), CrudAdmin.class);
+                startActivity(crud);
+            }
+        });
+
     }
 }

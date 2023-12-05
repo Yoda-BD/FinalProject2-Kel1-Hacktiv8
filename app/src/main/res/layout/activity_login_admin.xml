@@ -24,13 +24,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:layout_gravity="center_horizontal"
-        android:text="Login"
+        android:text="Login Admin"
         android:fontFamily="@font/librebaskerville"
         android:textSize="30sp"
         android:textColor="@color/white" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etEmailAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -47,7 +47,7 @@
         android:paddingLeft="10dp"/>
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etPasswordAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -64,7 +64,7 @@
         android:paddingLeft="10dp"/>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnLoginAdmin"
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:layout_marginStart="24dp"
@@ -76,18 +76,6 @@
         android:textSize="18sp"
         android:fontFamily="@font/librebaskerville"/>
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="24dp"
-        android:textColor="#807F7B"
-        android:backgroundTint="#F1F0E8"
-        android:text="Register"
-        android:textSize="18sp"
-        android:fontFamily="@font/librebaskerville"/>
 
 
 </LinearLayout>

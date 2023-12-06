@@ -73,6 +73,7 @@
                 android:layout_marginStart="20dp"
                 android:backgroundTint="#F1F0E8"
                 android:textColor="#333333"
+                android:onClick="onStaffLoginPage"
                 android:text="Staff"
                 android:fontFamily="@font/librebaskerville"
                 android:textAllCaps="false" />

@@ -27,4 +27,9 @@ public class SplashScreen2 extends AppCompatActivity {
         Intent intent = new Intent(this, LoginAdmin.class);
         startActivity(intent);
     }
+
+    public void onStaffLoginPage(View view) {
+        Intent intent = new Intent(this, LoginStaff.class);
+        startActivity(intent);
+    }
 }

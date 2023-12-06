@@ -63,7 +63,7 @@ public class LoginUser extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Login Berhasil", Toast.LENGTH_SHORT).show();
                         // Redirect ke halaman yang sesuai setelah login berhasil
                         // Misalnya, halaman utama aplikasi
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), HomeUser.class);
                         startActivity(intent);
                         finish(); // Optional: Menutup aktivitas saat ini jika diperlukan
                     }

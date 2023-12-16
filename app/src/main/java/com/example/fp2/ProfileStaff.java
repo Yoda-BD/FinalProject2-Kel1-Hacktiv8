@@ -63,9 +63,8 @@ public class ProfileStaff extends AppCompatActivity {
 
     private void logout() {
         mAuth.signOut();
-        // Redirect ke halaman login atau halaman sebelumnya
         startActivity(new Intent(ProfileStaff.this, LoginStaff.class));
-        finish(); // Tutup halaman profil agar tidak dapat dikembalikan
+        finish();
     }
 }
 

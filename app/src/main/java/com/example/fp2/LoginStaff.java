@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginStaff extends AppCompatActivity {
@@ -41,12 +39,10 @@ public class LoginStaff extends AppCompatActivity {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-                    Toast.makeText(LoginStaff.this, "Isi semua field", Toast.LENGTH_SHORT).show();
-                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    Toast.makeText(LoginStaff.this, "Format email salah", Toast.LENGTH_SHORT).show();
-                } else {
+                if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
                     loginUser(email, password);
+                } else {
+                    Toast.makeText(LoginStaff.this, "Isi semua field", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -54,24 +50,18 @@ public class LoginStaff extends AppCompatActivity {
 
     private void loginUser(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(new OnCompleteListener() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful()) {
-                            // Login berhasil
                             Toast.makeText(LoginStaff.this, "Login berhasil", Toast.LENGTH_SHORT).show();
-                            // Redirect ke halaman berikutnya atau lakukan tindakan yang sesuai
-                            Intent intent = new Intent(LoginStaff.this, ProfileStaff.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            Intent intent = new Intent(getApplicationContext(), ProfileStaff.class);
                             startActivity(intent);
-                            finish(); // Selesai dengan activity login setelah berhasil login
                         } else {
-                            // Login gagal
-                            Toast.makeText(LoginStaff.this, "Login gagal: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginStaff.this, "Login gagal", Toast.LENGTH_SHORT).show();
                             Log.e("Login", "Error: " + task.getException().getMessage());
                         }
                     }
                 });
     }
 }
-

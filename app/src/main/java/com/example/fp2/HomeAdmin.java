@@ -9,15 +9,13 @@ import android.widget.Button;
 
 public class HomeAdmin extends AppCompatActivity {
 
-    Button buttonStaff, buttonProduk;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_admin);
 
-        buttonStaff = findViewById(R.id.buttonStaff);
-        buttonProduk = findViewById(R.id.buttonProduk);
+        Button buttonStaff = findViewById(R.id.buttonStaff);
+        Button buttonProduk = findViewById(R.id.buttonProduk);
 
         buttonStaff.setOnClickListener(new View.OnClickListener() {
             @Override

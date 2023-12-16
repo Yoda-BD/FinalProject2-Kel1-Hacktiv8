@@ -118,7 +118,7 @@ public class AdminStaff extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Hapus data dari Firestore berdasarkan documentId
-                db.collection("users").document(documentId)
+                db.collection("staff").document(documentId)
                         .delete()
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override

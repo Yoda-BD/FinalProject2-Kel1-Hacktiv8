@@ -9,4 +9,9 @@
     <string name="alamat">Alamat</string>
     <string name="logout">Logout</string>
     <string name="username">Username</string>
+    <string name="new_user_register">New User? Register</string>
+    <string name="already_a_member_login_here">Already a Member? Login Here</string>
+    <string name="admin">Admin</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
 </resources>

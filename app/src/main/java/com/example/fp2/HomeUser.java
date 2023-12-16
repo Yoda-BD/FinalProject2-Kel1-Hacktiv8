@@ -5,7 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -23,13 +28,23 @@ public class HomeUser extends AppCompatActivity {
     private List<ProdukModel> hotProductList = new ArrayList<>();
     private HotProductAdapter hotProductAdapter;
 
+    @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_user);
 
+        LinearLayout btnprofileUser = findViewById(R.id.userProfil);
         recyclerView = findViewById(R.id.rv_hot_item);
         recyclerView.setHasFixedSize(true);
+
+        btnprofileUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeUser.this, ProfileUser.class);
+                startActivity(intent);
+            }
+        });
 
         //Untuk Bentuk List
         //LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
@@ -60,5 +75,6 @@ public class HomeUser extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Failed to load data.", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

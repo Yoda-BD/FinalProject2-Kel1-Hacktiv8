@@ -21,63 +21,69 @@
         android:layout_height="20dp" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="90dp">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_newuser"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New User? Register"
+            android:text="@string/new_user_register"
             android:fontFamily="@font/librebaskerville"
-            android:backgroundTint="#F1F0E8"
-            android:textColor="#333333"
+            android:background="@drawable/custom_button_background"
+            android:textColor="@color/Text"
             android:onClick="onNewUserClick"
             android:layout_gravity="center_horizontal" />
 
-        <Button
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_loginhere"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_button_background"
+            android:textColor="@color/Text"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#F1F0E8"
-            android:textColor="#333333"
             android:onClick="onAlreadyMemberClick"
-            android:text="Already a Member? Login Here"
+            android:text="@string/already_a_member_login_here"
             android:fontFamily="@font/librebaskerville"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:paddingHorizontal="0dp"
+            android:orientation="horizontal"
             android:gravity="center">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_admin"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="Admin"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                android:text="@string/admin"
                 android:onClick="onAdminLoginPage"
                 android:fontFamily="@font/librebaskerville"
-                android:backgroundTint="#F1F0E8"
+                android:background="@drawable/custom_button_background"
                 android:textColor="#333333"
                 android:textAllCaps="false" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_staff"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:backgroundTint="#F1F0E8"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/custom_button_background"
                 android:textColor="#333333"
                 android:onClick="onStaffLoginPage"
-                android:text="Staff"
+                android:text="@string/staff"
                 android:fontFamily="@font/librebaskerville"
                 android:textAllCaps="false" />
         </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

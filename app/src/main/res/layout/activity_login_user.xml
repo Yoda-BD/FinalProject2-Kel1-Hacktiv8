@@ -63,31 +63,29 @@
         android:background="@drawable/shape"
         android:paddingLeft="10dp"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="24dp"
-        android:textColor="#807F7B"
-        android:backgroundTint="#F1F0E8"
+        android:textColor="@color/Text"
+        android:background="@drawable/custom_button_background"
         android:text="Login"
         android:textSize="18sp"
         android:fontFamily="@font/librebaskerville"/>
 
-    <Button
+    <TextView
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="24dp"
-        android:textColor="#807F7B"
-        android:backgroundTint="#F1F0E8"
-        android:text="Register"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:fontFamily="@font/librebaskerville"
         android:textSize="18sp"
-        android:fontFamily="@font/librebaskerville"/>
+        android:text="Don't have an account?"
+        android:textColor="@color/Text"/>
 
 
 </LinearLayout>

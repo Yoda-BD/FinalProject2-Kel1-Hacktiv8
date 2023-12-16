@@ -29,13 +29,11 @@ public class RegisterUser extends AppCompatActivity {
     private Button btnRegister;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
-//    private DatabaseReference database;
 
     public void onBackClick(View view) {
         onBackPressed();
     }
 
-    //    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +62,6 @@ public class RegisterUser extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        // Jika user berhasil terautentikasi, lanjutkan dengan menyimpan data ke Firestore
                         saveToFirestore(etUsername.getText().toString().trim(),
                                 etEmail.getText().toString().trim(),
                                 etPassword.getText().toString().trim());
@@ -73,7 +70,6 @@ public class RegisterUser extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        // Jika terjadi kesalahan saat autentikasi
                         Toast.makeText(getApplicationContext(), "Gagal mendaftar: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -88,24 +84,21 @@ public class RegisterUser extends AppCompatActivity {
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
 
         db.collection("users")
-                .document(firebaseUser.getUid()) // Menggunakan UID dari pengguna sebagai ID dokumen
+                .document(firebaseUser.getUid())
                 .set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        // Jika berhasil disimpan
                         Toast.makeText(getApplicationContext(), "Data Berhasil Disimpan ke Firestore", Toast.LENGTH_SHORT).show();
 
-                        // Redirect ke halaman login
                         Intent intent = new Intent(getApplicationContext(), LoginUser.class);
                         startActivity(intent);
-                        finish(); // Optional: Menutup aktivitas saat ini agar tidak kembali ke halaman registrasi saat tombol back ditekan
+                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        // Jika terjadi kesalahan saat menyimpan
                         Toast.makeText(getApplicationContext(), "Gagal menyimpan data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         Log.w(TAG, "EROR" + e.getMessage());
                     }

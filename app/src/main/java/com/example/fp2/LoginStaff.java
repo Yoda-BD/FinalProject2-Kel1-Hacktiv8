@@ -25,7 +25,7 @@ public class LoginStaff extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_staff); // Pastikan nama layout-nya sesuai
+        setContentView(R.layout.activity_login_staff);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -54,13 +54,10 @@ public class LoginStaff extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful()) {
-                            // Login berhasil
                             Toast.makeText(LoginStaff.this, "Login berhasil", Toast.LENGTH_SHORT).show();
-                            // Redirect ke halaman berikutnya atau lakukan tindakan yang sesuai
                             Intent intent = new Intent(getApplicationContext(), ProfileStaff.class);
                             startActivity(intent);
                         } else {
-                            // Login gagal
                             Toast.makeText(LoginStaff.this, "Login gagal", Toast.LENGTH_SHORT).show();
                             Log.e("Login", "Error: " + task.getException().getMessage());
                         }

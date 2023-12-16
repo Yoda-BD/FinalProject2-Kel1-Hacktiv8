@@ -1,8 +1,5 @@
-Admin STAFF
--Bikin Akun dan data diri STAFF
--Liahat akun Staff
-
-yang belum
--Login Staff
--Profile Staff
--Percobaan
+Anggota Kelompok 1:
+Irfan Dian Pratama
+Jessica Desi Imelda
+Reza Bayu Ahmad Inzaghi
+Yoda Bagus Dwihardika

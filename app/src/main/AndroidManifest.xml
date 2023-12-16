@@ -19,12 +19,6 @@
             android:name=".ProfileUser"
             android:exported="false" />
         <activity
-            android:name=".ElectronicCategory"
-            android:exported="false" />
-        <activity
-            android:name=".BookCategory"
-            android:exported="false" />
-        <activity
             android:name=".LoginStaff"
             android:exported="false" />
         <activity

@@ -34,31 +34,26 @@ public class ProfileStaff extends AppCompatActivity {
         userAddressTV = findViewById(R.id.Alamat);
         btnLogOut = findViewById(R.id.btn_LogOut);
 
-        // Mendapatkan pengguna yang sedang login
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             String email = currentUser.getEmail();
             userEmailTV.setText(email);
 
-            // Mendapatkan data tambahan pengguna dari Firestore
             DocumentReference userRef = db.collection("staff").document(currentUser.getUid());
             userRef.get().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        // Mendapatkan informasi tambahan pengguna
                         String nama = document.getString("nama");
                         String password = document.getString("password");
                         String phone = document.getString("nomorHp");
                         String address = document.getString("alamat");
 
-                        // Menampilkan informasi tambahan pengguna di TextView
                         userNameTV.setText(nama);
                         userPasswordTV.setText(password);
                         userPhoneTV.setText(phone);
                         userAddressTV.setText(address);
 
-                        // Set listener pada tombol logout di sini
                         btnLogOut.setOnClickListener(view -> logout());
                     }
                 }
@@ -66,7 +61,6 @@ public class ProfileStaff extends AppCompatActivity {
         }
     }
 
-    // Metode untuk melakukan logout
     private void logout() {
         mAuth.signOut();
         // Redirect ke halaman login atau halaman sebelumnya

@@ -5,9 +5,24 @@ public class ProdukModel {
     private String imageUrl;
     private int quantity;
     private String category;
+    private String price;
 
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
 
     public ProdukModel() {
+    }
+
+    public ProdukModel(String namaProduk, String imageUrl, String category, String price) {
+        this.namaProduk = namaProduk;
+        this.imageUrl = imageUrl;
+        this.category = category;
+        this.price = price;
     }
 
     public String getNamaProduk() {
